@@ -22,8 +22,8 @@ const Box = (props) => {
         onPointerOut={(e) => setHover(false)}>
         <boxBufferGeometry attach="geometry" args={[1, 1, 1]} />
         <meshStandardMaterial attach="material" color={hovered ? 'hotpink' : 'orange'} />
-    </mesh>
-    )
+        </mesh>
+    );
 }
 
 export default Box;

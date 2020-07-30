@@ -1,9 +1,10 @@
-import React from 'react'
+import React, {useState} from 'react'
 import Box from './components/Box'
 import './styles.css'
 import { Canvas } from 'react-three-fiber'
 
 const App =()=>{
+  
   return(
     <Canvas>
     <ambientLight />
