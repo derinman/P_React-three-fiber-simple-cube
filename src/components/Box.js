@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react'
+import React, { useRef, useState, useEffect } from 'react'
 import { useFrame } from 'react-three-fiber'
 
 const Box = (props) => {
@@ -9,8 +9,13 @@ const Box = (props) => {
     const [hovered, setHover] = useState(false)
     const [active, setActive] = useState(false)
 
+    const {setModelLoaded } = props;
+    
+    useEffect(() => {
+        setModelLoaded(true);
+    }, []);
     // Rotate mesh every frame, this is outside of React without overhead
-    useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y += 0.01))
+    useFrame(() => (mesh.current.rotation.x = mesh.current.rotation.y = mesh.current.rotation.z += 0.01))
 
     return (
         <mesh
